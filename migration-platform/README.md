@@ -1,5 +1,5 @@
 
-# AI Java to C# Migration Platform (Person 2)
+# AI Java to C# Migration Platform 
 
 Modules:
 - Migration Planner
