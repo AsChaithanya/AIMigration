@@ -16,7 +16,7 @@ class Java21Generator(BaseGenerator):
                         request.relationships
                     )
 
-                target_path= PathRuleEngine().get_target_path(file_metadata=file, target_language="Java21")
+                target_path= PathRuleEngine().get_target_path(file_metadata=file, metadata=request.metadata)    
 
                 generated_files.append({
                     "fileName": f"{cls.name}.java",

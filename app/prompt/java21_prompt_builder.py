@@ -3,7 +3,10 @@ from app.prompt.base_prompt_builder import BasePromptBuilder
 
 class Java21PromptBuilder(BasePromptBuilder):
 
-    def build_prompt(self, request, cls, rag_context):
+    def build_prompt(self, request, current_class, rag_context):
+
+        source_version=request.metadata.source_version
+        target_version=request.metadata.target_version
 
         prompt = []
 
@@ -13,13 +16,13 @@ class Java21PromptBuilder(BasePromptBuilder):
 
         prompt.append("Goal")
 
-        prompt.append("Upgrade the Java class from Java 8 to Java 21.")
+        prompt.append(f"Upgrade the Java class from {source_version} to {target_version}.")
 
         prompt.append("")
 
         prompt.append(f"Project : {request.metadata.project_name}")
 
-        prompt.append(f"Class : {cls.name}")
+        prompt.append(f"Class : {current_class.name}")
 
         prompt.append("")
 
@@ -35,7 +38,7 @@ class Java21PromptBuilder(BasePromptBuilder):
 
         prompt.append("- Replace deprecated APIs")
 
-        prompt.append("- Use Java 21 features where beneficial")
+        prompt.append(f"- Use {target_version} features where beneficial")
 
         prompt.append("- Improve readability without changing behaviour")
 

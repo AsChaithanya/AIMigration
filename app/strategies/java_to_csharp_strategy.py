@@ -18,7 +18,7 @@ class JavaToCSharpStrategy(MigrationStrategy):
        self.file_writer = FileWriter()
        self.rag_service = RAGService()
        self.prompt_builder = CSharpPromptBuilder()
-       self.llm= LLMFactory.create("github")  # Default to mock LLM provider
+       self.llm= LLMFactory.create("mock")  # Default to mock LLM provider
        
    def execute(self, request, migration_order):
         ai_responses = {}

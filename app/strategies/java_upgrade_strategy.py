@@ -17,7 +17,7 @@ class JavaUpgradeStrategy(MigrationStrategy):
        self.file_writer = FileWriter()
        self.rag_service = RAGService()
        self.prompt_builder = Java21PromptBuilder()
-       self.llm= LLMFactory.create("github")  # Default to mock LLM provider
+       self.llm= LLMFactory.create("mock")  # Default to mock LLM provider
 
     def execute(self, request,migration_order):
 

@@ -18,7 +18,7 @@ class PathRuleEngine:
            else:
                folder = "Common"
            return os.path.join(folder, file_metadata.name.replace(".java", ".cs"))
-       elif target == "java21":
+       elif target == "java" and metadata.target_version == "Java 21":
             return file_metadata.path
        else:
             return file_metadata.path

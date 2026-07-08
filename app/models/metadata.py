@@ -6,6 +6,7 @@ class Metadata(BaseModel):
    framework: str
    build_tool: str
    source_version: str
+   target_version: str
    target_language: str
    target_framework: str
    files: int
